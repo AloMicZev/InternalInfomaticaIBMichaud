@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+        html,body{
+            overflow: visible;
+            scrollbar-width: thin;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      
+      <nav class="navbar bg-body-tertiary navbarmain">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../assets/img/logo-round.jpg" alt="Bootstrap">
+              </a>
+          <a class="navbar-brand" href="#">
+            <img src="../assets/img/user-icon.jpg" alt="Bootstrap">
+          </a>
+        </div>
+      </nav>
+      
+      <!-- Use any element to open the sidenav -->
+    </header>
+    <div class="container mt-1">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="salado-tab" data-bs-toggle="tab" data-bs-target="#salado-tab-pane" type="button" role="tab" aria-controls="salado-tab-pane" aria-selected="true">Salado</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="dulce-tab" data-bs-toggle="tab" data-bs-target="#dulce-tab-pane" type="button" role="tab" aria-controls="dulce-tab-pane" aria-selected="false">Dulce</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="preparado-tab" data-bs-toggle="tab" data-bs-target="#preparado-tab-pane" type="button" role="tab" aria-controls="preparado-tab-pane" aria-selected="false">Preparado</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="salado-tab-pane" role="tabpanel" aria-labelledby="salado-tab" tabindex="0">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <button class="card text-start mb-2 mt-2" id="Papas" onclick="itemSelect(this, 'Papas', 3.5)">
+                                    <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Papas</h5>
+                                      <p class="card-text">S/. 3.50</p>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="card text-start mb-2 mt-2" id="Canchita" onclick="itemSelect(this, 'Canchita', 1.5)">
+                                    <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Canchita</h5>
+                                      <p class="card-text">S/. 1.50</p>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="card text-start mb-2 mt-2" id="Chifles" onclick="itemSelect(this, 'Chifles', 2)">
+                                    <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Chifles</h5>
+                                      <p class="card-text">S/. 2</p>
+                                    </div>
+                                </button>
+                          </div>
+                          </div>
+                    </div>
+                    <div class="tab-pane fade" id="dulce-tab-pane" role="tabpanel" aria-labelledby="dulce-tab" tabindex="0"><div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <button class="card text-start mb-2 mt-2" id="Papas2" onclick="itemSelect(this, 'Papas2', 3.5)">
+                                <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Papas</h5>
+                                  <p class="card-text">S/. 3.50</p>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="card text-start mb-2 mt-2" id="Canchita2" onclick="itemSelect(this, 'Canchita2', 1.5)">
+                                <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Canchita</h5>
+                                  <p class="card-text">S/. 1.50</p>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="card text-start mb-2 mt-2" id="Chifles2" onclick="itemSelect(this, 'Chifles2', 2)">
+                                <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Chifles</h5>
+                                  <p class="card-text">S/. 2</p>
+                                </div>
+                            </button>
+                      </div>
+                </div></div>
+                    <div class="tab-pane fade" id="preparado-tab-pane" role="tabpanel" aria-labelledby="preparado-tab" tabindex="0"><div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <button class="card text-start mb-2 mt-2" id="Papas3" onclick="itemSelect(this, 'Papas3', 3.5)">
+                                <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Papas</h5>
+                                  <p class="card-text">S/. 3.50</p>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="card text-start mb-2 mt-2" id="Canchita3" onclick="itemSelect(this, 'Canchita3', 1.5)">
+                                <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Canchita</h5>
+                                  <p class="card-text">S/. 1.50</p>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button class="card text-start mb-2 mt-2" id="Chifles3" onclick="itemSelect(this, 'Chifles3', 2)">
+                                <img src="../assets/img/item.png" class="card-img-top" height="auto" width="auto" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Chifles</h5>
+                                  <p class="card-text">S/. 2</p>
+                                </div>
+                            </button>
+                      </div>
+                </div></div>
+                  </div>
+            </div>
+            <div class="col-md-4 verticalLine">
+                <h2>Carrito</h2>
+                <ul id="items"></ul>
+                <hr>
+                <h4>Subtotal: S/.<span id="st">0.00</span></h4>
+                <hr>
+                <h5>Elija un metodo de Pago</h5>
+                <input type="radio" class="btn-check" name="options-outlined" id="efectivo" autocomplete="off" checked>
+                <label class="btn btn-outline-success btn-payement" for="efectivo">Efectivo</label>
+
+                <input type="radio" class="btn-check " name="options-outlined" id="credito" autocomplete="off">
+                <label class="btn btn-outline-success btn-payement" for="credito">Credito</label>
+                
+                <select name="clasrm" id="clrm" class="form-select mt-2 hidden" onchange="clrmGet()">
+                    <option disabled selected>Seleccionar Seccion</option>
+                    <optgroup label="9no">
+                        <option value="9a">A</option>
+                        <option value="9b">B</option>
+                        <option value="9c">C</option>
+                    </optgroup>
+                    <optgroup label="10mo">
+                        <option value="10a">A</option>
+                        <option value="10b">B</option>
+                        <option value="10c">C</option>
+                    </optgroup>
+                    <optgroup label="11mo">
+                        <option value="11a">A</option>
+                        <option value="11b">B</option>
+                        <option value="11c">C</option>
+                    </optgroup>
+                    <option value="ib">IB</option>
+                    <option value="prof">Profesores</option>
+                    
+                </select>
+                <div id="9a" class="tabcontent">
+                    <select name="selstu" id="9as"  class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez">Juan Jimenez</option>
+                        <option value="hRodriguez">Harold Rodriguez</option>
+                    </select>
+                </div>
+                <div id="9b" class="tabcontent">
+                    <select name="selstu" id="9bs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez2">Juan Jimenez2</option>
+                        <option value="hRodriguez2">Harold Rodriguez2</option>
+                    </select>
+                </div>
+                <div id="9c" class="tabcontent">
+                    <select name="selstu" id="9cs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez3">Juan Jimenez3</option>
+                        <option value="hRodriguez3">Harold Rodriguez3</option>
+                    </select>
+                </div>
+                <div id="10a" class="tabcontent">
+                    <select name="selstu" id="10as" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez4">Juan Jimenez4</option>
+                        <option value="hRodriguez4">Harold Rodriguez4</option>
+                    </select>
+                </div>
+                <div id="10b" class="tabcontent">
+                    <select name="selstu" id="10bs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez5">Juan Jimenez5</option>
+                        <option value="hRodriguez5">Harold Rodriguez5</option>
+                    </select>
+                </div>
+                <div id="10c" class="tabcontent">
+                    <select name="selstu" id="10cs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez6">Juan Jimenez6</option>
+                        <option value="hRodrigue6">Harold Rodriguez6</option>
+                    </select>
+                </div>
+                <div id="11a" class="tabcontent">
+                    <select name="selstu" id="11as" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez7">Juan Jimenez7</option>
+                        <option value="hRodriguez7">Harold Rodriguez7</option>
+                    </select>
+                </div>
+                <div id="11b" class="tabcontent">
+                    <select name="selstu" id="11bs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez8">Juan Jimenez8</option>
+                        <option value="hRodriguez8">Harold Rodriguez8</option>
+                    </select>
+                </div>
+                <div id="11c" class="tabcontent">
+                    <select name="selstu" id="11cs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenez9">Juan Jimenez9</option>
+                        <option value="hRodriguez9">Harold Rodriguez9</option>
+                    </select>
+                </div>
+                <div id="ib" class="tabcontent">
+                    <select name="selstu" id="ibs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenezib">Juan Jimenezib</option>
+                        <option value="hRodriguezib">Harold Rodriguezib</option>
+                    </select>
+                </div>
+                <div id="prof" class="tabcontent">
+                    <select name="selstu" id="profs" class="form-select mt-2 " onchange="displayInfoStudent(this)">
+                        <option disabled selected>Seleccionar Estudiante</option>
+                        <option value="jJimenezp">Juan Jimenezp</option>
+                        <option value="hRodriguezp">Harold Rodriguezp</option>
+                    </select>
+                </div>
+                <div id="studentInfo" class="hidden">
+                    <div class="card mb-3 container mt-2" style="width: auto;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="../assets/img/user-icon.jpg" class="img-fluid rounded-start" alt="..." height="auto">
+                            </div>
+                          <div class="col-md-8">
+                            <div class="card-body text-end">
+                              <p class="card-title" id="studentName"></p>
+                              <p class="card-title" id="studentClassroom"></p>
+                              <p><span style="color: blue;">S/.70</span></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <br>
+                <button class="btn btn-primary mt-2" id="submitPayement" onClick="submitPayement()" disabled>Pagar</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

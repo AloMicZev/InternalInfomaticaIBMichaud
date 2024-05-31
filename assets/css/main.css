@@ -1,0 +1,156 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+/* Login Page */
+
+html body .fh{
+    min-height: 100vh!important;
+    height: 100%;
+    box-sizing: border-box;
+}
+.login{
+    background-color: #646454!important;
+    width: 100%;
+}
+.logo{
+    height: 100px;
+    width: auto;
+    border-radius: 100%;
+    background-color: beige;
+    justify-self: center;
+
+}
+.loginform input, label{
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+}
+.loginform input{
+    padding-left: auto;
+}
+.loginform label{
+    color: #fff;
+}
+
+.cl{
+    padding: 0!important;
+    margin: 0!important;
+}
+.inputimg{
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 576px){
+    .inputimg{
+        width: 0;
+        height: 0;
+    }
+}
+
+.ext-box{ display: grid; align-content: space-around; height: 100vh;}
+
+/* Navbar */
+
+.bar1,.bar2,.bar3{
+    position: relative;
+    width: 35px;
+    height: 5px;
+    background-color: rgb(185, 180, 185);
+    margin: 6px 0;
+    transition: 0.4s;
+    z-index: 3;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+.navbarmain {
+    background-color: #000!important;
+}
+.navbar-brand img{
+    border-radius: 100%;
+    height: 30px;
+    width: auto;
+}
+.sidenav {
+    height: 100%; 
+    width: 0;
+    position: fixed; 
+    z-index: 2; 
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .navbar-shown{
+    width: 250px;
+  }
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+
+  .tabcontent {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  .verticalLine{
+    border-left: 1px solid #000;
+  }
+  .selected{
+    background-color: #80c6ee;
+  }
+  #items li{
+    list-style: none;
+  }
+  .btn-payement{
+    border-radius: 0%!important;
+    margin: 0;
+    padding: 3px 30px;
+  }
+  .hidden{
+    display: none;
+  }
+  .al-cent{
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+  }
+  .btn-check{
+    position: absolute;
+    z-index: 0;
+  }

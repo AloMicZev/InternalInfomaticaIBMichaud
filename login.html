@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+        <div class="row">
+            <div class="col-xl-4 col-lg-12 col-sm-12 col-md-12 cl">
+                <div class="login text-center fh ">
+                  
+                    <form class="loginform ext-box" id="loginForm">
+                      <img src="assets/img/logo-round.jpg" alt="A" class="logo">
+                      <div class="int-box-center">
+                      <label for="validationCustom01" class="form-label">Usuario</label>
+                      <input type="text" class="form-control" id="validationCustom01" placeholder="Usuario"  required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <label for="validationCustom01" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="pwdinp1"placeholder="Contraseña"  required>
+                      <input type="checkbox" class="form-check-input" id="flexCheckDefault" onclick="viewPassword()">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Ver Contraseña
+                      </label>
+                      <select name="userType" id="userType" class="form-select">
+                        <option selected disabled>Elige tipo de usuario</option>
+                        <option value="parentUser">Parent</option>
+                        <option value="adminUser">Administration</option>
+                        <option value="vendorUser">Vendedor</option>
+                      </select>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="int-box-end ">
+                      <button type="submit" class="btn btn-success">Confirmar</button>
+                      </div>
+                      </form>
+                  
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-0 col-sm-0 col-md-0 cl">
+              <img src="assets/img/background-login.jpg" alt="" class="inputimg">
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', function(event) {
+    let d = loginForm.elements.userType.value;
+    console.log(d);
+    switch (d) {
+        case 'parentUser':
+            event.preventDefault();
+            window.location.replace('index.html');
+            break;
+        case 'adminUser':
+            event.preventDefault();
+            window.location.replace('administrator/index.html');
+            break;
+        case 'vendorUser':
+            event.preventDefault();
+            window.location.replace('vendor/index.html');
+            break;
+        default:
+            break;
+    }
+});
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

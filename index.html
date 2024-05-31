@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <header>
+      <div id="mySidenav" class="sidenav">
+        <a href="index.html">Dashboard</a>
+        <a href="purchases.html">View Purchases</a>
+        <a href="accounts.html">Manage Accounts</a>
+      </div>
+      
+      <nav class="navbar bg-body-tertiary navbarmain">
+        <div class="container-fluid">
+          <a class="cont" href="#" onclick="menuBar(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </a>
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/user-icon.jpg" alt="Bootstrap">
+          </a>
+        </div>
+      </nav>
+      
+      <!-- Use any element to open the sidenav -->
+    </header>
+    <div class="container">
+      <form action="#">
+        <select name="child" id="chName" class="form-select  form-select-lg mb-5 mt-1" onchange="disChange()">
+          <option value="jPerez">Juan Perez</option>
+          <option value="iPerez">Italo Perez</option>
+          <option value="gPerez">Gonzalo Perez</option>
+          <option value="all">Todos</option>
+        </select>
+      </form>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">28/05</h1>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Articulo</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Papas</td>
+                    <td>2</td>
+                    <td>S/.4</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">2</td>
+                    <td>Hamburguesa</td>
+                    <td>1</td>
+                    <td>S/.8</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="jPerez" class="tabcontent active">
+        <div class="row">
+          <div class="col">
+            <table class="table-purchases table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Monto</th>
+                  <th scope="col">Detalles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="viewmorelink" width="auto">
+            <a href="#" class="text-end d-block">Ver mas</a>
+          </div>
+          </div>
+          <div class="col">
+            <div style="width: auto;"><canvas id="chart"></canvas></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1>Credito Actual</h1>
+            <br>
+            <h2><span>S/.</span>70</h2>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <h2>Agregar Saldo</h2>
+                <form action="#" method="post">
+                  <input type="text" class="form-control" name="amm" id="am">
+                  <button type="submit" class="btn btn-primary smt">Aceptar</button>
+                </form>
+              </div>
+              <div class="col">
+                <h2>Eliminar Cuentas</h2>
+                <form action="#" method="post">
+                  <button type="submit" class="btn btn-danger smt" value="accdel">Eliminar Cuenta</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="iPerez" class="tabcontent">
+        <div class="row">
+          <div class="col">
+            <table class="table-purchases table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Monto</th>
+                  <th scope="col">Detalles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>28/05</td>
+                  <td>S/.12</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>28/05</td>
+                  <td>S/.12.77</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>28/05</td>
+                  <td>S/.12.5</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>28/05</td>
+                  <td>S/.1.2</td>
+                  <td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewmorelink" width="auto">
+              <a href="#" class="text-end d-block">Ver mas</a>
+            </div>
+          </div>
+          <div class="col">
+            <div style="width: auto;"><canvas id="chart2"></canvas></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1>Credito Actual</h1>
+            <br>
+            <h2><span>S/.</span>70</h2>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <h2>Agregar Saldo</h2>
+                <form action="#" method="post">
+                  <input type="text" class="form-control" name="amm" id="am">
+                  <button type="submit" class="btn btn-primary smt">Aceptar</button>
+                </form>
+              </div>
+              <div class="col">
+                <h2>Eliminar Cuentas</h2>
+                <form action="#" method="post">
+                  <button type="submit" class="btn btn-danger smt" value="accdel">Eliminar Cuenta</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="gPerez" class="tabcontent">
+        <div class="row">
+          <div class="col">
+            <table class="table-purchases table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Monto</th>
+                  <th scope="col">Detalles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>28/05</td>
+                  <td>S/.132</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>28/05</td>
+                  <td>S/.122</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>28/05</td>
+                  <td>S/.125</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>28/05</td>
+                  <td>S/.162</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>28/05</td>
+                  <td>S/.124</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewmorelink" width="auto">
+              <a href="#" class="text-end d-block">Ver mas</a>
+            </div>
+          </div>
+          <div class="col">
+            <div style="width: auto;"><canvas id="chart3"></canvas></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1>Credito Actual</h1>
+            <br>
+            <h2><span>S/.</span>70</h2>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <h2>Agregar Saldo</h2>
+                <form action="#" method="post">
+                  <input type="number" class="form-control" name="amm" id="am">
+                  <button type="submit" class="btn btn-primary smt">Aceptar</button>
+                </form>
+              </div>
+              <div class="col">
+                <h2>Eliminar Cuentas</h2>
+                <form action="#" method="post">
+                  <button type="submit" class="btn btn-danger smt" value="accdel">Eliminar Cuenta</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="all" class="tabcontent">
+        <div class="row">
+          <div class="col">
+            <table class="table-purchases table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Monto</th>
+                  <th scope="col">Alumno</th>
+                  <th scope="col">Detalles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>28/05</td>
+                  <td>S/.132</td>
+                  <td>Juan</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>28/05</td>
+                  <td>S/.122</td>
+                  <td>Juan</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>28/05</td>
+                  <td>S/.125</td>
+                  <td>Italo</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>28/05</td>
+                  <td>S/.162</td>
+                  <td>Gonzalo</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>28/05</td>
+                  <td>S/.124</td>
+                  <td>Juan</td>
+                  <td><a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ver Mas</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="viewmorelink" width="auto">
+              <a href="#" class="text-end d-block">Ver mas</a>
+            </div>
+          </div>
+          <div class="col">
+            <div style="width: auto;"><canvas id="chartall"></canvas></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1>Credito Actual</h1>
+            <br>
+            <h2><span>S/.</span>70</h2>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="col">
+                <h1>Eliminar Cuentas</h1>
+                <form action="#" method="post">
+                  <button type="submit" class="btn btn-danger smt" value="accdel">Eliminar Cuentas</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
